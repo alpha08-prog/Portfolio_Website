@@ -1,0 +1,1 @@
+{"name":"Local: amd2","url":"c:\\Users\\agraw\\OneDrive\\Desktop\\C++,JAVA, JS\\.cph\\amd2.cpp","tests":[{"id":1732377733924,"input":"2\n5 10\n11 12 13 14 15\n4 1023\n511 512 256 255","output":"YES\n3\n1 4 5\nNO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\agraw\\OneDrive\\Desktop\\C++,JAVA, JS\\.cph\\amd2.cpp","group":"local","local":true}

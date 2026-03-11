@@ -1,0 +1,14 @@
+div{
+    height: 100px;
+    width: 100px;
+    background-color: dodgerblue;
+    color: white;
+    border: 1px solid black;
+}
+button{
+    background-color:red;
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
