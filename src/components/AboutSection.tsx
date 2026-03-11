@@ -8,30 +8,26 @@ import TechSphere from "./TechSphere";
 const highlights = [
   {
     icon: Code2,
-    label: "Frontend",
-    value: "4+ years",
-    desc: "React, TypeScript, Next.js",
+    label: "Frontend",  
+    desc: "React, JavaScript, TypeScript, Next.js",
     color: "neon-cyan",
   },
   {
     icon: Server,
     label: "Backend",
-    value: "3+ years",
-    desc: "Node.js, Python, GraphQL",
+    desc: "Node.js, Express.js, REST APIs",
     color: "neon-purple",
   },
   {
     icon: Database,
     label: "Databases",
-    value: "5+ types",
-    desc: "MongoDB, PostgreSQL, Redis",
+    desc: "MongoDB, PostgreSQL, Redis, MySql",
     color: "neon-blue",
   },
   {
     icon: Globe,
     label: "Deployed",
-    value: "20+ apps",
-    desc: "AWS, GCP, Vercel, Docker",
+    desc: "Vercel, Docker,Jenkins,AWS",
     color: "neon-green",
   },
 ];
@@ -81,12 +77,12 @@ export default function AboutSection() {
           >
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p className="text-lg">
-                I'm a <span className="text-foreground font-semibold">Full Stack Developer</span> with a
+                I'm an aspiring <span className="text-foreground font-semibold">Full Stack Developer</span> with a
                 passion for building scalable, performant, and visually stunning web applications.
               </p>
               <p>
-                With over <span className="text-neon-cyan font-semibold">4 years of experience</span>, I
-                specialize in the React ecosystem on the frontend and Node.js/Python on the backend,
+               I
+                specialize in the React ecosystem on the frontend and Node.js/Express.js on the backend,
                 delivering end-to-end solutions that blend great user experiences with robust architecture.
               </p>
               <p>
@@ -97,7 +93,7 @@ export default function AboutSection() {
               </p>
               <div className="pt-2 font-mono text-xs space-y-1">
                 <p className="text-neon-cyan">const developer = {"{"}</p>
-                <p className="pl-4 text-muted-foreground">location: <span className="text-neon-green">"San Francisco, CA"</span>,</p>
+                <p className="pl-4 text-muted-foreground">location: <span className="text-neon-green">"Bengaluru, Karnataka"</span>,</p>
                 <p className="pl-4 text-muted-foreground">openTo: <span className="text-neon-green">["remote", "hybrid", "full-time"]</span>,</p>
                 <p className="pl-4 text-muted-foreground">coffee: <span className="text-neon-cyan">true</span></p>
                 <p className="text-neon-cyan">{"}"}</p>
@@ -106,7 +102,7 @@ export default function AboutSection() {
 
             {/* Stats */}
             <div className="mt-8 grid grid-cols-2 gap-3">
-              {highlights.map(({ icon: Icon, label, value, desc, color }, i) => (
+              {highlights.map(({ icon: Icon, label, desc, color }, i) => (
                 <motion.div
                   key={label}
                   initial={{ opacity: 0, y: 20 }}
@@ -115,8 +111,7 @@ export default function AboutSection() {
                   className={`border rounded-xl p-4 ${colorMap[color]}`}
                 >
                   <Icon size={16} className="mb-2 opacity-80" />
-                  <div className="text-xl font-bold text-foreground">{value}</div>
-                  <div className="text-xs font-semibold">{label}</div>
+                  <div className="text-xl font-bold text-foreground">{label}</div>
                   <div className="text-xs opacity-60 mt-0.5">{desc}</div>
                 </motion.div>
               ))}

@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Send, Github, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
+import { Send, Github, Linkedin, Instagram, Mail, MapPin, Phone } from "lucide-react";
 
 const socials = [
   { icon: Github, label: "GitHub", href: "https://github.com/alpha08-prog", handle: "@atharva08" },
   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/atharva-agrawal-172421330/", handle: "in/atharva-agrawal" },
-  { icon: Twitter, label: "Twitter", href: "https://twitter.com", handle: "@alexmercer_dev" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/atharva_8904_/", handle: "@atharva_8904_" },
   { icon: Mail, label: "Email", href: "mailto:agrawalatharva2004@gmail.com", handle: "agrawalatharva2004@gmail.com" },
 ];
 
@@ -216,7 +216,7 @@ export default function ContactForm() {
           <p className="text-xs font-mono text-muted-foreground">
             <span className="text-neon-cyan">{"<"}</span>
             {"  Designed & Built by "}
-            <span className="text-foreground font-semibold">Alex Mercer</span>
+            <span className="text-foreground font-semibold">Atharva Agrawal</span>
             {"  "}
             <span className="text-neon-cyan">{"/>"}</span>
           </p>

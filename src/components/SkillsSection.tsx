@@ -6,18 +6,21 @@ import { motion, useInView } from "framer-motion";
 import * as THREE from "three";
 
 const SKILLS = [
-  { name: "React", level: 95, color: "#61dafb", category: "Frontend" },
-  { name: "TypeScript", level: 92, color: "#3178c6", category: "Language" },
-  { name: "Next.js", level: 90, color: "#ffffff", category: "Frontend" },
-  { name: "Node.js", level: 88, color: "#68a063", category: "Backend" },
-  { name: "Tailwind CSS", level: 94, color: "#38bdf8", category: "Styling" },
-  { name: "MongoDB", level: 85, color: "#4db33d", category: "Database" },
-  { name: "Docker", level: 82, color: "#2496ed", category: "DevOps" },
-  { name: "Git", level: 93, color: "#f05032", category: "DevOps" },
-  { name: "GraphQL", level: 80, color: "#e535ab", category: "API" },
-  { name: "Python", level: 78, color: "#3776ab", category: "Language" },
-  { name: "AWS", level: 76, color: "#ff9900", category: "Cloud" },
-  { name: "PostgreSQL", level: 84, color: "#336791", category: "Database" },
+  { name: "React", level: 100, color: "#61dafb", category: "Frontend" },
+  { name: "TypeScript", level: 100, color: "#3178c6", category: "Language" },
+  { name: "React Native", level: 100, color: "#61dafb", category: "Frontend" },
+  { name: "Linux", level: 100, color: "#61dafb", category: "OS" },
+  { name: "Next.js", level: 100, color: "#ffffff", category: "Frontend" },
+  { name: "Node.js", level: 100, color: "#68a063", category: "Backend" },
+  { name: "Tailwind CSS", level: 100, color: "#38bdf8", category: "Styling" },
+  { name: "MongoDB", level: 100, color: "#4db33d", category: "Database" },
+  { name: "Docker", level: 100, color: "#2496ed", category: "DevOps" },
+  { name: "Jenkins", level: 100, color: "#2496ed", category: "DevOps" },
+  { name: "Git", level: 100, color: "#f05032", category: "DevOps" },
+  { name: "REST", level: 100, color: "#e535ab", category: "API" },
+  { name: "Python", level: 100, color: "#3776ab", category: "Language" },
+  { name: "AWS", level: 100, color: "#ff9900", category: "Cloud" },
+  { name: "PostgreSQL", level: 100, color: "#336791", category: "Database" },
 ];
 
 const CATEGORIES = ["Frontend", "Backend", "Language", "Database", "DevOps", "API", "Cloud", "Styling"];

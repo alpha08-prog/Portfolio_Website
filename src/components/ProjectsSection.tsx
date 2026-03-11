@@ -4,67 +4,67 @@ import { Github, ExternalLink, Code2 } from "lucide-react";
 
 const projects = [
   {
-    title: "NexusAI Platform",
+    title: "OpsFlow",
     description:
-      "A full-stack AI-powered SaaS platform with real-time collaboration, custom LLM fine-tuning pipelines, and multi-tenant architecture handling 50k+ users.",
-    tech: ["Next.js", "Python", "LangChain", "PostgreSQL", "Redis", "Docker"],
-    github: "#",
+      "A comprehensive, production-ready full-stack application designed to streamline and modernize office operations, administrative tasks, and management workflows.",
+    tech: ["React.js", "Express.js", "TypeScript", "PostgreSQL", "Jenkins", "Docker"],
+    github: "https://github.com/alpha08-prog/Ops_Flow",
     demo: "#",
     color: "cyan",
     accent: "#00ffff",
     featured: true,
   },
   {
-    title: "3D Product Configurator",
+    title: "AI Scholar",
     description:
-      "WebGL-powered product customization tool built with Three.js and React Three Fiber. Allows real-time texture, color, and geometry changes with photorealistic rendering.",
-    tech: ["React", "Three.js", "R3F", "TypeScript", "Zustand"],
-    github: "#",
-    demo: "#",
+      "AI-Scholar: A RAG Framework for Research Paper Question Answering.",
+    tech: ["React-Native", "Firebase", "RAG", "Python", "AWS"],
+    github: "https://github.com/alpha08-prog/AI-Scholar",
+    demo: "https://drive.google.com/file/d/1SgHN49c0P5W3EmVsCPcTXfBjBo9Kb4b2/view",
     color: "purple",
     accent: "#a855f7",
     featured: true,
   },
   {
-    title: "DevStream Analytics",
+    title: "D-CODE-RED: AI-Powered News Analysis & Fact-Checking Platform",
     description:
-      "Real-time developer productivity analytics dashboard with GitHub integration, burndown charts, and team performance insights.",
-    tech: ["React", "Node.js", "GraphQL", "TimescaleDB", "AWS"],
-    github: "#",
+      "A comprehensive web application that combines multiple AI services to analyze news content, detect fake news, analyze emotions, and provide fact-checking capabilities. The platform includes a browser extension for real-time news verification.",
+    tech: ["React", "Node.js", "REST", "RAG", "NLP"],
+    github: "https://github.com/suryarao551/D-CODE-RED",
     demo: "#",
     color: "blue",
     accent: "#3b82f6",
     featured: false,
   },
   {
-    title: "Distributed Task Queue",
+    title: "Decentralized LAN Communication Suite",
     description:
-      "High-performance job queue system supporting 100k+ jobs/sec with priority queuing, dead-letter handling, and real-time dashboard.",
-    tech: ["Node.js", "Redis", "BullMQ", "Docker", "Grafana"],
-    github: "#",
+      "This project is a fully decentralized communication system built using Computer Communication Networks (CCN) concepts.",
+    tech: ["React.js", "Socket.IO", "Express.js", "Node.js", "Metadata storage utilities"],
+    github: "https://github.com/alpha08-prog/Networks",
     demo: "#",
     color: "green",
     accent: "#22c55e",
     featured: false,
   },
   {
-    title: "OpenSource CLI Toolkit",
+    title: "EEG Mental Arithmetic Classification",
     description:
-      "A powerful developer CLI with 200+ GitHub stars, featuring project scaffolding, git hooks automation, and custom template support.",
-    tech: ["TypeScript", "Node.js", "Commander.js", "Ink"],
-    github: "#",
+      "A complete machine learning project for classifying EEG signals to determine mental arithmetic task performance quality, featuring a modern React frontend and FastAPI backend.",
+    tech: ["React.js", "FastAPI", "Scikit-learn", "Matplotlib"],
+    github: "https://github.com/alpha08-prog/ML_Project",
     demo: "#",
     color: "magenta",
     accent: "#ec4899",
     featured: false,
   },
   {
-    title: "WebRTC Video Platform",
+    title: "Doc Schedular",
     description:
-      "Peer-to-peer video conferencing with screen sharing, live captions, and breakout rooms. Built on WebRTC with TURN/STUN server infrastructure.",
-    tech: ["React", "WebRTC", "Socket.io", "Node.js", "Coturn"],
-    github: "#",
-    demo: "#",
+      "A demo medical appointment and prescription management app built with Next.js 14 and TypeScript. It showcases a doctor and patient workflow with mock APIs, centralized types, and shared in-memory data stores. The UI uses Tailwind CSS.",
+    tech: ["Next.js", "TypeScript", "REST API", "Node.js", "Vercel"],
+    github: "https://github.com/alpha08-prog/Doc_Schedular",
+    demo: "https://doc-schedular.vercel.app/",
     color: "cyan",
     accent: "#00ffff",
     featured: false,
@@ -216,7 +216,7 @@ export default function ProjectsSection() {
             <span className="text-gradient">Built</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            A selection of projects that showcase my technical range, from AI platforms to WebGL experiences.
+            A selection of projects that showcase my technical range, from AI platforms to Full Stack Applications.
           </p>
         </motion.div>
 
@@ -235,7 +235,7 @@ export default function ProjectsSection() {
           className="mt-12 text-center"
         >
           <a
-            href="https://github.com"
+            href="https://github.com/alpha08-prog"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 btn-neon px-6 py-3 rounded-lg text-sm font-mono"

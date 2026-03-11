@@ -151,9 +151,9 @@ export default function Hero3D() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-5xl sm:text-7xl lg:text-8xl font-bold mb-4 leading-none"
         >
-          <span className="text-foreground">Alex</span>
-          <br />
-          <span className="text-gradient">Mercer</span>
+          <span className="text-foreground">Atharva </span>
+        
+          <span className="text-gradient">Agrawal</span>
         </motion.h1>
 
         {/* Title */}
@@ -213,9 +213,9 @@ export default function Hero3D() {
           className="flex items-center gap-6"
         >
           {[
-            { icon: Github, href: "https://github.com", label: "GitHub" },
-            { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-            { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+            { icon: Github, href: "https://github.com/alpha08-prog", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/atharva-agrawal-172421330/", label: "LinkedIn" },
+            
           ].map(({ icon: Icon, href, label }) => (
             <a
               key={label}
