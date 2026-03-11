@@ -1,9 +1,6 @@
-import { Suspense, useRef } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Code2, Server, Database, Globe } from "lucide-react";
-import TechSphere from "./TechSphere";
 
 const highlights = [
   {
@@ -117,30 +114,23 @@ export default function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Right: 3D Tech Sphere */}
+          {/* Right: Profile Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-80 sm:h-96 lg:h-[500px] rounded-2xl overflow-hidden border-neon"
+            className="h-80 sm:h-96 lg:h-[500px] rounded-2xl overflow-hidden border-neon group relative"
             style={{ background: "hsl(230 25% 5%)" }}
           >
-            <Canvas dpr={[1, 1.5]}>
-              <PerspectiveCamera makeDefault position={[0, 0, 7]} fov={50} />
-              <ambientLight intensity={0.2} />
-              <pointLight position={[5, 5, 5]} color="#00ffff" intensity={1.5} />
-              <pointLight position={[-5, -5, 5]} color="#a855f7" intensity={1} />
-              <Suspense fallback={null}>
-                <TechSphere />
-              </Suspense>
-              <OrbitControls
-                enableZoom={false}
-                enablePan={false}
-                autoRotate={false}
-                minPolarAngle={Math.PI / 4}
-                maxPolarAngle={Math.PI * 3 / 4}
-              />
-            </Canvas>
+            {/* Inner glow effect on hover */}
+            <div className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" 
+                 style={{ boxShadow: "inset 0 0 50px hsl(var(--neon-cyan) / 0.2)" }} />
+            
+            <img
+              src="/profile.jpeg"
+              alt="Atharva Agrawal"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
           </motion.div>
         </div>
       </div>
