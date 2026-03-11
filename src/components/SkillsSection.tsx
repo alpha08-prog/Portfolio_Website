@@ -1,29 +1,29 @@
-import { Suspense, useRef } from "react";
+import { Suspense, useRef, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Text, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, animate } from "framer-motion";
 import * as THREE from "three";
 
 const SKILLS = [
-  { name: "React", level: 100, color: "#61dafb", category: "Frontend" },
-  { name: "TypeScript", level: 100, color: "#3178c6", category: "Language" },
-  { name: "React Native", level: 100, color: "#61dafb", category: "Frontend" },
-  { name: "Linux", level: 100, color: "#61dafb", category: "OS" },
-  { name: "Next.js", level: 100, color: "#ffffff", category: "Frontend" },
-  { name: "Node.js", level: 100, color: "#68a063", category: "Backend" },
-  { name: "Tailwind CSS", level: 100, color: "#38bdf8", category: "Styling" },
-  { name: "MongoDB", level: 100, color: "#4db33d", category: "Database" },
-  { name: "Docker", level: 100, color: "#2496ed", category: "DevOps" },
-  { name: "Jenkins", level: 100, color: "#2496ed", category: "DevOps" },
-  { name: "Git", level: 100, color: "#f05032", category: "DevOps" },
-  { name: "REST", level: 100, color: "#e535ab", category: "API" },
-  { name: "Python", level: 100, color: "#3776ab", category: "Language" },
-  { name: "AWS", level: 100, color: "#ff9900", category: "Cloud" },
-  { name: "PostgreSQL", level: 100, color: "#336791", category: "Database" },
+  { name: "React", level: 95, color: "#61dafb", category: "Frontend" },
+  { name: "TypeScript", level: 90, color: "#3178c6", category: "Language" },
+  { name: "React Native", level: 85, color: "#61dafb", category: "Frontend" },
+  { name: "Linux", level: 88, color: "#61dafb", category: "OS" },
+  { name: "Next.js", level: 92, color: "#ffffff", category: "Frontend" },
+  { name: "Node.js", level: 85, color: "#68a063", category: "Backend" },
+  { name: "Tailwind CSS", level: 96, color: "#38bdf8", category: "Styling" },
+  { name: "MongoDB", level: 82, color: "#4db33d", category: "Database" },
+  { name: "Docker", level: 80, color: "#2496ed", category: "DevOps" },
+  { name: "Jenkins", level: 75, color: "#2496ed", category: "DevOps" },
+  { name: "Git", level: 92, color: "#f05032", category: "DevOps" },
+  { name: "REST", level: 90, color: "#e535ab", category: "API" },
+  { name: "Python", level: 88, color: "#3776ab", category: "Language" },
+  { name: "AWS", level: 78, color: "#ff9900", category: "Cloud" },
+  { name: "PostgreSQL", level: 85, color: "#336791", category: "Database" },
 ];
 
-const CATEGORIES = ["Frontend", "Backend", "Language", "Database", "DevOps", "API", "Cloud", "Styling"];
+
 
 // 3D orbiting skill labels
 function SkillOrbit({
@@ -113,6 +113,24 @@ function SkillsScene() {
 }
 
 function SkillBar({ skill, isInView, index }: { skill: (typeof SKILLS)[0]; isInView: boolean; index: number }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(0, skill.level, {
+        duration: 2.0,
+        delay: 0.5 + index * 0.1,
+        ease: "easeOut",
+        onUpdate(value) {
+          setCount(Math.round(value));
+        }
+      });
+      return () => controls.stop();
+    } else {
+      setCount(0);
+    }
+  }, [isInView, skill.level, index]);
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -132,7 +150,7 @@ function SkillBar({ skill, isInView, index }: { skill: (typeof SKILLS)[0]; isInV
           </span>
         </div>
         <span className="text-xs font-mono" style={{ color: skill.color }}>
-          {skill.level}%
+          {count}%
         </span>
       </div>
       <div className="h-1.5 rounded-full bg-muted overflow-hidden">
@@ -140,7 +158,7 @@ function SkillBar({ skill, isInView, index }: { skill: (typeof SKILLS)[0]; isInV
           className="h-full rounded-full"
           initial={{ width: 0 }}
           animate={isInView ? { width: `${skill.level}%` } : {}}
-          transition={{ delay: 0.5 + index * 0.05, duration: 0.8, ease: "easeOut" }}
+          transition={{ delay: 0.5 + index * 0.1, duration: 2.0, ease: "easeOut" }}
           style={{
             background: `linear-gradient(90deg, ${skill.color}80, ${skill.color})`,
             boxShadow: `0 0 8px ${skill.color}50`,
@@ -153,7 +171,7 @@ function SkillBar({ skill, isInView, index }: { skill: (typeof SKILLS)[0]; isInV
 
 export default function SkillsSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   return (
     <section id="skills" ref={ref} className="relative py-32 px-6 grid-bg">

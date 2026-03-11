@@ -172,7 +172,7 @@ export default function TechSphere() {
           name={tech.name}
           color={tech.color}
           index={i}
-          total={4}
+          total={TECHNOLOGIES.slice(8).length}
           radius={2.0}
           tiltAngle={-Math.PI / 4}
         />

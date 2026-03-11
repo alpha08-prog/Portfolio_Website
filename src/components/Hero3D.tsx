@@ -6,7 +6,7 @@ import * as THREE from "three";
 import Particles from "./Particles";
 import NeonGrid from "./NeonGrid";
 import FloatingGeometry from "./FloatingGeometry";
-import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowDown, Github, Linkedin } from "lucide-react";
 
 // Camera rig with mouse parallax
 function CameraRig({ mouse }: { mouse: React.MutableRefObject<[number, number]> }) {
@@ -152,7 +152,6 @@ export default function Hero3D() {
           className="text-5xl sm:text-7xl lg:text-8xl font-bold mb-4 leading-none"
         >
           <span className="text-foreground">Atharva </span>
-        
           <span className="text-gradient">Agrawal</span>
         </motion.h1>
 

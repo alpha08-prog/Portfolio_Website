@@ -104,7 +104,7 @@ function TimelineItem({
       </div>
 
       {/* Right content */}
-      <div className={`pb-12 ${!isLeft ? "" : ""}`}>
+      <div className="pb-12">
         {!isLeft && (
           <motion.div
             initial={{ opacity: 0, x: 40 }}

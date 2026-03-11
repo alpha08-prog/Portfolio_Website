@@ -81,8 +81,7 @@ export default function AboutSection() {
                 passion for building scalable, performant, and visually stunning web applications.
               </p>
               <p>
-               I
-                specialize in the React ecosystem on the frontend and Node.js/Express.js on the backend,
+                I specialize in the React ecosystem on the frontend and Node.js/Express.js on the backend,
                 delivering end-to-end solutions that blend great user experiences with robust architecture.
               </p>
               <p>

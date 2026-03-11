@@ -1,5 +1,5 @@
-import { useRef, useMemo, useCallback } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useRef, useMemo } from "react";
+import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 // GPU Particle system using custom vertex/fragment shaders
@@ -66,7 +66,6 @@ interface ParticlesProps {
 
 export default function Particles({ count = 2000, mouse }: ParticlesProps) {
   const meshRef = useRef<THREE.Points>(null);
-  const { size } = useThree();
 
   const { positions, sizes, speeds, offsets } = useMemo(() => {
     const positions = new Float32Array(count * 3);
