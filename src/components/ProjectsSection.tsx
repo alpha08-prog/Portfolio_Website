@@ -62,7 +62,7 @@ const projects = [
     title: "Doc Schedular",
     description:
       "A demo medical appointment and prescription management app built with Next.js 14 and TypeScript. It showcases a doctor and patient workflow with mock APIs, centralized types, and shared in-memory data stores. The UI uses Tailwind CSS.",
-    tech: ["Next.js", "TypeScript", "REST API", "Node.js", "Vercel"],
+    tech: ["Next.js", "TypeScript", "REST API"],
     github: "https://github.com/alpha08-prog/Doc_Schedular",
     demo: "https://doc-schedular.vercel.app/",
     color: "cyan",

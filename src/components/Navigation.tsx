@@ -56,7 +56,7 @@ export default function Navigation() {
             className="flex items-center gap-2 text-neon-cyan hover:text-neon-purple transition-colors duration-300"
           >
             <Code2 size={22} />
-            <span className="font-mono font-bold text-sm tracking-widest">AM.DEV</span>
+            <span className="font-mono font-bold text-sm tracking-widest">A<sup>2</sup>.DEV</span>
           </button>
 
           {/* Desktop nav */}

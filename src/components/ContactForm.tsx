@@ -1,6 +1,11 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Send, Github, Linkedin, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  as string;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  as string;
 
 const socials = [
   { icon: Github, label: "GitHub", href: "https://github.com/alpha08-prog", handle: "@atharva08" },
@@ -19,9 +24,23 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    // Simulate send
-    await new Promise((r) => setTimeout(r, 1500));
-    setStatus("sent");
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+          to_name: "Atharva",
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      setStatus("sent");
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setStatus("error");
+    }
   };
 
   const inputClasses =
@@ -84,6 +103,30 @@ export default function ContactForm() {
                   className="mt-6 btn-neon px-6 py-2 rounded-lg text-sm font-mono"
                 >
                   Send Another
+                </button>
+              </div>
+            ) : status === "error" ? (
+              <div className="h-full flex flex-col items-center justify-center text-center p-8 rounded-2xl border border-red-500/30 bg-red-500/5">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", damping: 12 }}
+                  className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mb-4"
+                >
+                  <Mail size={24} className="text-red-400" />
+                </motion.div>
+                <h3 className="text-xl font-bold text-red-400 mb-2">Oops! Something went wrong.</h3>
+                <p className="text-muted-foreground text-sm">
+                  Couldn't send your message. Please try again or email me directly at{" "}
+                  <a href="mailto:agrawalatharva2004@gmail.com" className="text-neon-cyan underline">
+                    agrawalatharva2004@gmail.com
+                  </a>
+                </p>
+                <button
+                  onClick={() => setStatus("idle")}
+                  className="mt-6 btn-neon px-6 py-2 rounded-lg text-sm font-mono"
+                >
+                  Try Again
                 </button>
               </div>
             ) : (
