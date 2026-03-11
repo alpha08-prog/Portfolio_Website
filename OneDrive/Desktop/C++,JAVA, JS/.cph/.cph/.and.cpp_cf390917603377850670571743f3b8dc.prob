@@ -1,1 +1,0 @@
-{"name":"Local: and","url":"c:\\Users\\agraw\\OneDrive\\Desktop\\C++,JAVA, JS\\.cph\\and.cpp","tests":[{"id":1732378721546,"input":"2\n3 2\n1 2 2\n2 3 1 \n2 2 \n1 2 1\n1 2 2","output":"1 2 3 \n-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\agraw\\OneDrive\\Desktop\\C++,JAVA, JS\\.cph\\and.cpp","group":"local","local":true}
