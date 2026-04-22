@@ -3,16 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { Github, ExternalLink, Code2 } from "lucide-react";
 
 const projects = [
-  {
-    title: "OpsFlow",
-    description:
-      "A comprehensive, production-ready full-stack application designed to streamline and modernize office operations, administrative tasks, and management workflows.",
-    tech: ["React.js", "Express.js", "TypeScript", "PostgreSQL", "Jenkins", "Docker"],
-    github: "https://github.com/alpha08-prog/Ops_Flow",
-    color: "cyan",
-    accent: "#00ffff",
-    featured: true,
-  },
+ 
   {
     title: "AI Scholar",
     description:
@@ -55,7 +46,7 @@ const projects = [
     featured: false,
   },
   {
-    title: "CyberSaviour(Agentic AI fot SOCs)",
+    title: "CyberSaviour(Agentic AI for SOCs)",
     description:
       "CyberSaviour is an agentic AI-powered Security Operations Center (SOC) designed to transform overwhelming security data into actionable intelligence and immersive workflows.",
     tech: ["React", "TypeScript", "Three.js","Python"],
@@ -63,6 +54,16 @@ const projects = [
     color: "cyan",
     accent: "#00ffff",
     featured: false,
+  },
+   {
+    title: "OpsFlow",
+    description:
+      "A comprehensive, production-ready full-stack application designed to streamline and modernize office operations, administrative tasks, and management workflows.",
+    tech: ["React.js", "Express.js", "TypeScript", "PostgreSQL", "Jenkins", "Docker"],
+    github: "https://github.com/alpha08-prog/Ops_Flow",
+    color: "cyan",
+    accent: "#00ffff",
+    featured: true,
   },
 ];
 
