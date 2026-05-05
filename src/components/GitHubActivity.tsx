@@ -4,6 +4,18 @@ import { motion } from "framer-motion";
 
 const USERNAME = "alpha08-prog";
 
+// Curated list — matches the projects shown in ProjectsSection.
+// Names must match the GitHub repo name exactly (case-insensitive).
+// Order in this array = display order.
+const FEATURED_REPOS = [
+  "Ops_Flow",
+  "AI-Scholar",
+  "Kubenetes-Attack-Path-Analyzer",
+  "Buildathon_Room_105",
+  "ML_Project",
+  "Networks",
+];
+
 type GhUser = {
   login: string;
   avatar_url: string;
@@ -43,10 +55,22 @@ async function fetchRepos(username: string): Promise<GhRepo[]> {
   );
   if (!res.ok) throw new Error(`GitHub repos fetch failed: ${res.status}`);
   const repos: GhRepo[] = await res.json();
-  return repos
-    .filter((r) => !r.fork && !r.archived)
-    .sort((a, b) => b.stargazers_count - a.stargazers_count || a.name.localeCompare(b.name))
-    .slice(0, 4);
+
+  const byName = new Map(repos.map((r) => [r.name.toLowerCase(), r]));
+  const featured = FEATURED_REPOS.map((name) => byName.get(name.toLowerCase())).filter(
+    (r): r is GhRepo => Boolean(r)
+  );
+
+  // Show up to 4: prefer the curated list, then top-starred non-fork fallbacks.
+  const limit = 4;
+  if (featured.length >= limit) return featured.slice(0, limit);
+
+  const featuredNames = new Set(featured.map((r) => r.name.toLowerCase()));
+  const fallback = repos
+    .filter((r) => !r.fork && !r.archived && !featuredNames.has(r.name.toLowerCase()))
+    .sort((a, b) => b.stargazers_count - a.stargazers_count || a.name.localeCompare(b.name));
+
+  return [...featured, ...fallback].slice(0, limit);
 }
 
 const LANG_COLORS: Record<string, string> = {

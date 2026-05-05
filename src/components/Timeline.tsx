@@ -10,7 +10,7 @@ const experiences = [
     location: "Hubballi, Karnataka (Hybrid)",
     period: "Dec 2025 — Present",
     description:
-      "Designed and developed a full-stack Office Management System (OMS) automating grievance handling, visitor tracking, and task workflows across 3+ administrative modules.",
+      "Built and shipped a full-stack Office Management System (OMS) from scratch — automating grievance handling, visitor tracking, and task workflows across 3+ administrative modules. Fully functional and deployed on Zoho Catalyst.",
     tech: ["React.js", "Node.js", "PostgreSQL", "Redis", "Docker", "ZOHO"],
     accent: "#00ffff",
   },
