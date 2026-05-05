@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Code2, Server, Database, Globe } from "lucide-react";
+import GitHubActivity from "./GitHubActivity";
 
 const highlights = [
   {
@@ -18,13 +19,13 @@ const highlights = [
   {
     icon: Database,
     label: "Databases",
-    desc: "MongoDB, PostgreSQL, Redis, MySql",
+    desc: "MongoDB, PostgreSQL, Redis, MySQL",
     color: "neon-blue",
   },
   {
     icon: Globe,
     label: "Deployed",
-    desc: "Vercel, Docker,Jenkins,AWS",
+    desc: "Vercel, Docker, Jenkins, AWS",
     color: "neon-green",
   },
 ];
@@ -74,7 +75,7 @@ export default function AboutSection() {
           >
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p className="text-lg">
-                I'm an aspiring <span className="text-foreground font-semibold">Full Stack Developer</span> with a
+                I'm a <span className="text-foreground font-semibold">Full Stack Developer</span> with a
                 passion for building scalable, performant, and visually stunning web applications.
               </p>
               <p>
@@ -87,6 +88,16 @@ export default function AboutSection() {
                 you'll find me contributing to open source projects or exploring the latest in
                 web technology.
               </p>
+              {/* Currently — what I'm working on right now */}
+              <div className="flex items-start gap-3 pt-2 px-4 py-3 rounded-lg border border-neon-green/20 bg-neon-green/5">
+                <span className="mt-1 w-2 h-2 rounded-full bg-neon-green flex-shrink-0 animate-pulse-glow" aria-hidden="true" />
+                <p className="text-sm leading-relaxed">
+                  <span className="text-xs font-mono uppercase tracking-widest text-neon-green mr-2">Currently</span>
+                  <span className="text-foreground">Building OMS at the Office of Hon'ble Union Minister</span>
+                  <span className="text-muted-foreground"> · exploring agentic AI for SOC workflows.</span>
+                </p>
+              </div>
+
               <div className="pt-2 font-mono text-xs space-y-1">
                 <p className="text-neon-cyan">const developer = {"{"}</p>
                 <p className="pl-4 text-muted-foreground">location: <span className="text-neon-green">"Bengaluru, Karnataka"</span>,</p>
@@ -128,11 +139,18 @@ export default function AboutSection() {
             
             <img
               src="/profile.jpeg"
-              alt="Atharva Agrawal"
+              alt="Atharva Agrawal — Full Stack Developer"
+              width={800}
+              height={1000}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </motion.div>
         </div>
+
+        {/* Live GitHub activity */}
+        <GitHubActivity />
       </div>
     </section>
   );

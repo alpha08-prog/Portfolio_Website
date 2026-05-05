@@ -1,5 +1,9 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import CommandPalette from "@/components/CommandPalette";
+import KonamiOverlay from "@/components/KonamiOverlay";
+import { useKonami } from "@/hooks/useKonami";
 
 // Lazy load heavy 3D sections for performance
 const Hero3D = lazy(() => import("@/components/Hero3D"));
@@ -7,6 +11,7 @@ const AboutSection = lazy(() => import("@/components/AboutSection"));
 const ProjectsSection = lazy(() => import("@/components/ProjectsSection"));
 const SkillsSection = lazy(() => import("@/components/SkillsSection"));
 const Timeline = lazy(() => import("@/components/Timeline"));
+const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
 const ContactForm = lazy(() => import("@/components/ContactForm"));
 
 function SectionLoader() {
@@ -21,8 +26,18 @@ function SectionLoader() {
 }
 
 export default function Index() {
+  const [konamiActive, setKonamiActive] = useState(false);
+  useKonami(() => setKonamiActive(true));
+
   return (
     <main className="relative">
+      {/* Skip to content for keyboard users */}
+      <a href="#about" className="skip-to-content">Skip to content</a>
+
+      {/* Cmd+K command palette (global) */}
+      <CommandPalette onTriggerKonami={() => setKonamiActive(true)} />
+      <KonamiOverlay active={konamiActive} onDismiss={() => setKonamiActive(false)} />
+
       {/* Navigation */}
       <Navigation />
 
@@ -51,10 +66,18 @@ export default function Index() {
         <Timeline />
       </Suspense>
 
+      {/* Testimonials */}
+      <Suspense fallback={<SectionLoader />}>
+        <TestimonialsSection />
+      </Suspense>
+
       {/* Contact */}
       <Suspense fallback={<SectionLoader />}>
         <ContactForm />
       </Suspense>
+
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }

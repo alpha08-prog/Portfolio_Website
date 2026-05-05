@@ -30,7 +30,7 @@
     --secondary-foreground: 230 25% 4%;
 
     --muted: 230 15% 12%;
-    --muted-foreground: 215 20% 55%;
+    --muted-foreground: 215 22% 68%;
 
     /* Magenta accent */
     --accent: 280 100% 70%;
@@ -97,6 +97,32 @@
 
   code, pre, .mono {
     font-family: 'Space Mono', monospace;
+  }
+
+  /* Strong, consistent keyboard focus */
+  :focus-visible {
+    outline: 2px solid hsl(var(--neon-cyan) / 0.85);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  /* Skip link — visible on focus */
+  .skip-to-content {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 100;
+    background: hsl(var(--background));
+    color: hsl(var(--neon-cyan));
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid hsl(var(--neon-cyan) / 0.5);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.875rem;
+    transition: top 0.2s ease;
+  }
+  .skip-to-content:focus {
+    top: 1rem;
   }
 }
 
@@ -298,4 +324,20 @@
 ::selection {
   background: hsl(var(--neon-cyan) / 0.3);
   color: hsl(var(--foreground));
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }

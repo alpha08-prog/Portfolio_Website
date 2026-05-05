@@ -6,7 +6,8 @@ import * as THREE from "three";
 import Particles from "./Particles";
 import NeonGrid from "./NeonGrid";
 import FloatingGeometry from "./FloatingGeometry";
-import { ArrowDown, Github, Linkedin } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, FileText } from "lucide-react";
+import MagneticButton from "./MagneticButton";
 
 // Camera rig with mouse parallax
 function CameraRig({ mouse }: { mouse: React.MutableRefObject<[number, number]> }) {
@@ -190,18 +191,18 @@ export default function Hero3D() {
           transition={{ delay: 1.2, duration: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 mb-12"
         >
-          <button
+          <MagneticButton
             onClick={() => scrollToSection("projects")}
             className="btn-neon-solid px-8 py-3 rounded-lg text-sm font-mono tracking-wider uppercase"
           >
             View Projects
-          </button>
-          <button
+          </MagneticButton>
+          <MagneticButton
             onClick={() => scrollToSection("contact")}
             className="btn-neon px-8 py-3 rounded-lg text-sm font-mono tracking-wider uppercase"
           >
             Contact Me
-          </button>
+          </MagneticButton>
         </motion.div>
 
         {/* Social links */}
@@ -212,15 +213,15 @@ export default function Hero3D() {
           className="flex items-center gap-6"
         >
           {[
-            { icon: Github, href: "https://github.com/alpha08-prog", label: "GitHub" },
-            { icon: Linkedin, href: "https://www.linkedin.com/in/atharva-agrawal-172421330/", label: "LinkedIn" },
-            
-          ].map(({ icon: Icon, href, label }) => (
+            { icon: Github, href: "https://github.com/alpha08-prog", label: "GitHub", external: true },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/atharva-agrawal-172421330/", label: "LinkedIn", external: true },
+            { icon: Mail, href: "mailto:agrawalatharva2004@gmail.com", label: "Email", external: false },
+            { icon: FileText, href: "/resume.pdf", label: "Resume", external: true },
+          ].map(({ icon: Icon, href, label, external }) => (
             <a
               key={label}
               href={href}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               aria-label={label}
               className="p-2 rounded-full border border-foreground/10 hover:border-neon-cyan/50 text-muted-foreground hover:text-neon-cyan transition-all duration-300 hover:-translate-y-1"
             >
@@ -238,6 +239,7 @@ export default function Hero3D() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <button
+          type="button"
           onClick={() => scrollToSection("about")}
           className="flex flex-col items-center gap-2 text-muted-foreground hover:text-neon-cyan transition-colors"
           aria-label="Scroll to about"

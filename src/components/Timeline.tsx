@@ -6,11 +6,11 @@ const experiences = [
   {
     type: "work",
     title: "Full Stack Developer Intern",
-    company: "The Office of Prahlad Joshi (Union Minister of New and Renewable Energy, Govt of India)",
-    location: "Hubbali, Karnataka(Hybrid)",
-    period: "Dec-2025 – Present",
+    company: "Office of Hon'ble Union Minister Pralhad Joshi (Ministry of New & Renewable Energy, GoI)",
+    location: "Hubballi, Karnataka (Hybrid)",
+    period: "Dec 2025 — Present",
     description:
-      "Designed and developed a full-stack Office Management System (OMS) automating grievance handling, visitor tracking,`and task workflows across 3+ administrative modules",
+      "Designed and developed a full-stack Office Management System (OMS) automating grievance handling, visitor tracking, and task workflows across 3+ administrative modules.",
     tech: ["React.js", "Node.js", "PostgreSQL", "Redis", "Docker", "ZOHO"],
     accent: "#00ffff",
   },
@@ -19,22 +19,21 @@ const experiences = [
     title: "Frontend Developer Intern",
     company: "PearlThoughts",
     location: "Remote",
-    period: "July-2025 – Aug-2025",
+    period: "Jul 2025 — Aug 2025",
     description:
-      "Built Schedula, a doctor–patient appointment platform enabling multirole access for doctors, patients, and administrators.",
+      "Built Schedula, a doctor–patient appointment platform enabling multi-role access for doctors, patients, and administrators.",
     tech: ["Next.js", "TypeScript", "REST API", "MongoDB"],
     accent: "#a855f7",
   },
-  
   {
     type: "education",
     title: "B.Tech Data Science and AI",
     company: "IIIT Dharwad",
     location: "Dharwad, Karnataka",
-    period: "2023 – Present",
+    period: "2023 — Present",
     description:
-      "Focused on DSA, Object Oriented Programming, DBMS, Operating Systems, Computer Networks, SoftwareEngineering, Cryptography, DevSecOps.",
-    tech: ["Algorithms", "Software Enginnering", "Full Stack Development"],
+      "Focused on DSA, Object Oriented Programming, DBMS, Operating Systems, Computer Networks, Software Engineering, Cryptography, and DevSecOps.",
+    tech: ["Algorithms", "Software Engineering", "Full Stack Development"],
     accent: "#f59e0b",
   },
 ];
