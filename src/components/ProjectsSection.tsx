@@ -14,8 +14,6 @@ type Project = {
   accent: string;
   featured?: boolean;
   year: string;
-  role: string;
-  status: "Live" | "Shipped" | "Archived" | "In progress";
   category: Category;
   outcomes?: string[];
 };
@@ -30,8 +28,6 @@ const projects: Project[] = [
     accent: "#00ffff",
     featured: true,
     year: "2025",
-    role: "Solo build",
-    status: "In progress",
     category: "Full Stack",
     outcomes: ["3+ admin modules", "Dockerized CI via Jenkins"],
   },
@@ -46,8 +42,6 @@ const projects: Project[] = [
     accent: "#a855f7",
     featured: true,
     year: "2025",
-    role: "Solo build",
-    status: "Shipped",
     category: "AI/ML",
     outcomes: ["RAG pipeline on AWS", "Native mobile UX"],
   },
@@ -59,9 +53,7 @@ const projects: Project[] = [
     github: "https://github.com/alpha08-prog/Kubenetes-Attack-Path-Analyzer",
     cover: "/projects/k8s-attack-path.png",
     accent: "#3b82f6",
-    year: "2025",
-    role: "Solo build",
-    status: "Shipped",
+    year: "2026",
     category: "Cybersec",
     outcomes: ["Graph-based path analysis", "AI-narrated threat reports"],
   },
@@ -73,9 +65,7 @@ const projects: Project[] = [
     github: "https://github.com/alpha08-prog/Buildathon_Room_105",
     cover: "/projects/cybersaviour.png",
     accent: "#00ffff",
-    year: "2025",
-    role: "Hackathon team",
-    status: "Shipped",
+    year: "2026",
     category: "Cybersec",
     outcomes: ["Buildathon submission", "Immersive 3D SOC dashboard"],
   },
@@ -88,8 +78,6 @@ const projects: Project[] = [
     cover: "/projects/eeg-classification.png",
     accent: "#ec4899",
     year: "2025",
-    role: "Solo build",
-    status: "Shipped",
     category: "AI/ML",
     outcomes: ["CI/CD via GitHub Actions", "Containerized inference"],
   },
@@ -101,8 +89,6 @@ const projects: Project[] = [
     github: "https://github.com/alpha08-prog/Networks",
     accent: "#22c55e",
     year: "2024",
-    role: "Solo build",
-    status: "Archived",
     category: "Networks",
     outcomes: ["Peer-to-peer messaging", "No central server"],
   },
@@ -169,13 +155,6 @@ function ProceduralCover({ project }: { project: Project }) {
     </div>
   );
 }
-
-const STATUS_STYLE: Record<Project["status"], string> = {
-  Live: "text-neon-green",
-  Shipped: "text-neon-cyan",
-  "In progress": "text-yellow-400",
-  Archived: "text-muted-foreground",
-};
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [hovered, setHovered] = useState(false);
@@ -283,10 +262,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {/* Meta row */}
         <div className="flex items-center gap-3 mb-4 text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
           <span>{project.year}</span>
-          <span className="opacity-30">·</span>
-          <span>{project.role}</span>
-          <span className="opacity-30">·</span>
-          <span className={STATUS_STYLE[project.status]}>● {project.status}</span>
         </div>
 
         {/* Description */}
