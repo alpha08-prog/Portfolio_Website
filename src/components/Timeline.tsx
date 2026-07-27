@@ -5,13 +5,35 @@ import { Briefcase, GraduationCap, Calendar } from "lucide-react";
 const experiences = [
   {
     type: "work",
+    title: "SDE Apprentice",
+    company: "Boeing",
+    location: "Bengaluru, Karnataka (On-site)",
+    period: "Jun 2026 — Present",
+    description:
+      "Software Development Engineer Apprentice at Boeing's Bengaluru engineering center, working on enterprise-scale software systems.",
+    tech: ["Java", "Spring Boot", "AWS", "Docker"],
+    accent: "#4da6ff",
+  },
+  {
+    type: "work",
+    title: "Full Stack Developer Intern",
+    company: "Hindustan Aeronautics Limited",
+    location: "Remote",
+    period: "Jun 2026 — Present",
+    description:
+      "Built a full-stack procurement portal with 6 role-based screens, JWT auth, and an 8-stage payment state machine with all money/GST/liquidated-damages math computed server-side. Shipped an e-file noting workflow with custody-based access control and a contract engine generating documents from a 71-clause × 8-type matrix with SHA-256 tamper verification, plus a local SLM pipeline that auto-generates 10-stage procurement notes.",
+    tech: ["React 18", "Node.js", "Express", "SQLite", "JWT", "Qwen 2.5 SLM"],
+    accent: "#1aff79",
+  },
+  {
+    type: "work",
     title: "Full Stack Developer Intern",
     company: "Office of Hon'ble Union Minister Pralhad Joshi (Ministry of New & Renewable Energy, GoI)",
     location: "Hubballi, Karnataka (Hybrid)",
-    period: "Dec 2025 — Present",
+    period: "Dec 2025 — Jun 2026",
     description:
-      "Built and shipped a full-stack Office Management System (OMS) from scratch — automating grievance handling, visitor tracking, and task workflows across 3+ administrative modules. Fully functional and deployed on Zoho Catalyst.",
-    tech: ["React.js", "Node.js", "PostgreSQL", "Redis", "Docker", "ZOHO"],
+      "Architected and deployed a production-grade Office Management System (OMS) from scratch on the Zoho platform, automating grievance handling, visitor tracking, and administrative workflows across 6+ operational modules. Cut average application latency from 7–8s to ~1s (≈85% improvement), built 15+ RESTful APIs, and engineered RBAC auth securing 10+ protected endpoints.",
+    tech: ["React.js", "Node.js", "PostgreSQL", "Prisma ORM", "Docker", "ZOHO"],
     accent: "#00ffff",
   },
   {
@@ -230,7 +252,7 @@ export default function Timeline() {
         <div className="hidden md:block">
           {experiences.map((item, i) => (
             <TimelineItem
-              key={item.title}
+              key={`${item.company}-${item.period}`}
               item={item}
               index={i}
               isInView={isInView}
@@ -242,7 +264,7 @@ export default function Timeline() {
         {/* Mobile timeline */}
         <div className="md:hidden">
           {experiences.map((item, i) => (
-            <MobileTimeline key={item.title} item={item} index={i} isInView={isInView} />
+            <MobileTimeline key={`${item.company}-${item.period}`} item={item} index={i} isInView={isInView} />
           ))}
         </div>
       </div>
