@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/compone
 import { projects, experiences, skillGroups, EMAIL, GITHUB, LINKEDIN, type Project } from "@/lib/portfolio";
 import "@/portfolio.css";
 
-const filters = ["All work", "Systems", "AI & ML", "Security"] as const;
+const filters = ["All work", "AI & ML", "Security"] as const;
 const searchText = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 const layers = [
   { name: "Applications", icon: Braces, tools: "React · TypeScript · React Native", description: "Thoughtful interfaces that make complex workflows feel simple.", code: "interface → experience" },
@@ -59,7 +59,7 @@ function Architecture() {
 }
 
 function ProjectVisual({ project }: { project: Project; }) {
-  if (project.visual === "ops") return <div className="project-visual ops-visual" aria-hidden="true">
+  if (project.visual === "cloud") return <div className="project-visual cloud-visual" aria-hidden="true">
     <div className="mini-sidebar">
       <Asterisk size={22} />
       <i />
@@ -69,32 +69,32 @@ function ProjectVisual({ project }: { project: Project; }) {
     </div>
     <div className="mini-app">
       <div className="mini-app-header">
-        <span>OpsFlow<span className="mini-muted"> / Workspace</span>
+        <span>IsoLab<span className="mini-muted"> / Cloud Security</span>
         </span>
         <span className="mini-avatar">AA</span>
       </div>
-      <div className="mini-greeting">Everything, in its place.</div>
+      <div className="mini-greeting">Isolation, backed by evidence.</div>
       <div className="mini-stats">
         <div>
-          <span>Grievances</span>
-          <strong>Organized.</strong>
+          <span>Configuration checks</span>
+          <strong>30 checks</strong>
         </div>
         <div>
-          <span>Workflows</span>
-          <strong>Connected.</strong>
+          <span>Measured pilot</span>
+          <strong>160 runs</strong>
         </div>
         <div>
-          <span>Access</span>
-          <strong>Controlled.</strong>
+          <span>Test workloads</span>
+          <strong>3 workloads</strong>
         </div>
       </div>
       <div className="mini-table">
-        <div>WORKFLOW <span>STATUS</span>
-        </div>{["Grievance management", "Visitor tracking", "Administrative requests"].map(x => <div key={x}>{x}<span>
-          <i /> Integrated</span>
+        <div>CONTROL AREA <span>METHOD</span>
+        </div>{[["Configuration posture", "Policy gates"], ["Resource isolation", "cgroup v2"], ["Runtime telemetry", "Engine events"]].map(([area, method]) => <div key={area}>{area}<span>
+          <i /> {method}</span>
         </div>)}</div>
     </div>
-    <span className="visual-caption">SYSTEM INTERFACE / CONCEPT</span>
+    <span className="visual-caption">CLOUD SECURITY LAB / CONCEPT</span>
   </div>;
   if (project.visual === "scholar") return <div className="project-visual scholar-visual" aria-hidden="true">
     <div className="paper paper-back">

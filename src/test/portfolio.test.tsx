@@ -19,9 +19,10 @@ afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 describe("portfolio interactions", () => {
   it("filters the project collection and restores all projects", () => {
     render(<Index />);
-    expect(screen.getAllByRole("button", { name: /^Explore (AI Scholar|OpsFlow|Kubernetes|EEG)/ })).toHaveLength(4);
+    expect(screen.getAllByRole("button", { name: /^Explore (AI Scholar|IsoLab|Kubernetes|EEG)/ })).toHaveLength(4);
     fireEvent.click(screen.getByRole("button", { name: "Security" }));
     expect(screen.getByRole("button", { name: "Explore Kubernetes Attack Path Analyzer" })).toBeVisible();
+    expect(screen.getByRole("button", { name: "Explore IsoLab — Cloud Security" })).toBeVisible();
     expect(screen.queryByRole("button", { name: "Explore AI Scholar" })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /All work/ }));
     expect(screen.getByRole("button", { name: "Explore AI Scholar" })).toBeVisible();

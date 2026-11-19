@@ -10,7 +10,7 @@ export type Project = {
 };
 
 // Professional content is grounded in the supplied November 2026 résumé.
-// OpsFlow and EEG retain existing repository project links and descriptions.
+// IsoLab follows Cloud_Security's README; EEG retains its existing project details.
 export const projects: Project[] = [
   {
     title: "AI Scholar", category: "AI & ML", year: "2025–26", visual: "scholar",
@@ -20,11 +20,12 @@ export const projects: Project[] = [
     github: `${GITHUB}/AI-Scholar`,
   },
   {
-    title: "OpsFlow", category: "Systems", year: "2025–26", visual: "ops",
-    summary: "One connected workspace for office operations, administrative tasks, and everyday workflows.",
-    tech: ["React", "Node.js", "PostgreSQL", "Docker", "TypeScript", "Jenkins"],
-    details: ["A full-stack platform for managing office operations and administrative workflows.", "Connects application interfaces with backend services and a relational database.", "Containerized delivery with Docker and a Jenkins CI pipeline."],
-    github: `${GITHUB}/Ops_Flow`,
+    title: "IsoLab — Cloud Security", category: "Security", year: "2026", visual: "cloud",
+    summary: "An executable container-security lab for evaluating tenant isolation, resource contention, and interference detection.",
+    tech: ["Python", "Docker", "React", "Prometheus", "Grafana", "TypeScript"],
+    details: ["Built 30 configuration checks with severity-weighted posture scores, waivers, policy gates, and JSON/SARIF reports.", "Combines tenant resource controls, network and storage boundaries, cgroup v2/PSI observation, and engine-event rules.", "Completed a 160-run, single-host pilot comparing isolation and detection across payments, Spark RandomForest, and Spark SVM workloads. Isolation protects workloads at a competing-throughput cost; detector performance varies by workload.", "Connects security reports and historical lab results to an interactive React dashboard, with the newer pilot published separately as reproducible research evidence."],
+    github: `${GITHUB}/Cloud_Security`,
+    demo: "https://alpha08-prog.github.io/Cloud_Security/", demoLabel: "Interactive dashboard",
   },
   {
     title: "Kubernetes Attack Path Analyzer", category: "Security", year: "2026", visual: "kubernetes",

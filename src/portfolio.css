@@ -137,7 +137,7 @@
 .rag-dot { display: inline-block; width: 4px; height: 4px; border: 1px solid #8f84a4; border-radius: 50%; margin-right: 5px; }
 .visual-caption { position: absolute; bottom: 12px; left: 15px; font-family: 'Space Grotesk', sans-serif; font-size: .5rem; letter-spacing: .12em; color: #80856f; z-index: 3; }
 .scholar-visual .visual-caption { color: #7c7090; }
-.ops-visual { background: #d9e3cb; display: flex; padding: 35px 0 30px 35px; align-items: stretch; }
+.cloud-visual { background: #d9e3cb; display: flex; padding: 35px 0 30px 35px; align-items: stretch; }
 .mini-sidebar { position: relative; width: 43px; flex-shrink: 0; background: #2b3822; color: #d0f67c; border-radius: 5px 0 0 5px; padding: 16px 11px; margin-top: 0; box-shadow: 0 8px 20px #2e40221a; transform: rotate(-4deg); transform-origin: right center; }
 .mini-sidebar i { display: block; width: 12px; height: 8px; background: #a7bf8a55; margin-top: 22px; border-radius: 2px; }
 .mini-app { background: #fafbf7; border-radius: 0 5px 5px 0; padding: 18px 19px; flex: 1; box-shadow: 0 8px 20px #2e40221a; transform: rotate(-4deg); transform-origin: left center; margin-right: -20px; color: #2e3c25; transition: transform .5s; }
@@ -313,7 +313,7 @@
   .project-grid { gap: 35px 22px; } .project-info h3 { font-size: 1.2rem; } .project-plus { width: 31px; height: 31px; }
   .project-summary { font-size: .8125rem; max-width: 100%; } .project-visual { aspect-ratio: 1.25; }
   .scholar-phone { height: 100%; width: 53%; left: 22%; } .paper-back { left: 8%; width: 40%; } .rag-label { display: none; }
-  .ops-visual { padding: 25px 0 25px 20px; } .mini-app { padding: 14px 10px; } .mini-sidebar { width: 33px; padding-inline: 7px; }
+  .cloud-visual { padding: 25px 0 25px 20px; } .mini-app { padding: 14px 10px; } .mini-sidebar { width: 33px; padding-inline: 7px; }
   .mini-greeting { font-size: .8125rem; } .mini-stats { gap: 4px; } .mini-stats > div { padding: 9px 4px; }
   .mini-stats strong { font-size: .5rem; } .mini-stats span { font-size: .375rem; } .mini-table { font-size: .375rem; }
   .image-visual { padding: 25px 15px 0; } .image-sticker { font-size: .5625rem; padding: 8px; }
@@ -358,7 +358,7 @@
   .project-tech { margin-top: 12px; } .project-tech span { font-size: .625rem; padding: 4px 8px; }
   .scholar-phone { width: 43%; left: 29%; padding-top: 27px; } .phone-small { margin-top: 15px; } .scholar-phone h4 { font-size: 1rem; }
   .rag-label { display: block; font-size: .375rem; right: 2%; } .paper-back { width: 37%; left: 12%; }
-  .ops-visual { padding: 30px 0 30px 30px; } .mini-app { padding: 15px; } .mini-greeting { font-size: 1rem; }
+  .cloud-visual { padding: 30px 0 30px 30px; } .mini-app { padding: 15px; } .mini-greeting { font-size: 1rem; }
   .mini-sidebar { width: 36px; padding-inline: 7px; } .mini-stats span { font-size: .4375rem; } .mini-stats strong { font-size: .5625rem; } .mini-table { font-size: .4375rem; }
   .work-bottom { display: block; margin-top: 30px; padding-top: 22px; font-size: .75rem; } .work-bottom a { margin-top: 17px; }
   .journey-grid { grid-template-columns: 1fr; gap: 35px; } .journey-intro > p { max-width: 100%; margin-top: 20px; }
