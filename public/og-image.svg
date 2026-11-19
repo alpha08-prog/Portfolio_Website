@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#47563a"/></pattern></defs>
+  <rect width="1200" height="630" fill="#131610"/>
+  <rect x="770" width="430" height="630" fill="url(#grid)"/>
+  <path d="M60 104h1080M60 550h1080" stroke="#38432f"/>
+  <text x="60" y="70" font-family="Arial,sans-serif" font-size="30" font-weight="bold" letter-spacing="-1.5" fill="#f2f4ed">atharva</text>
+  <text x="60" y="161" font-family="Arial,sans-serif" font-size="13" letter-spacing="2" fill="#aac78b">ATHARVA AGRAWAL / SOFTWARE ENGINEER</text>
+  <text x="54" y="272" font-family="Arial,sans-serif" font-size="96" letter-spacing="-6" fill="#f2f4ed">Engineering</text>
+  <text x="54" y="374" font-family="Arial,sans-serif" font-size="96" letter-spacing="-6" fill="#f2f4ed">ideas into</text>
+  <text x="58" y="481" font-family="Georgia,serif" font-size="116" font-style="italic" letter-spacing="-6" fill="#d0f67c">impact.</text>
+  <g transform="translate(950 306)" stroke="#d0f67c" stroke-width="15" stroke-linecap="square"><path d="M0-86V86M-75-43L75 43M-75 43L75-43"/></g>
+  <circle cx="950" cy="306" r="157" fill="none" stroke="#6c8752" stroke-dasharray="3 8"/>
+  <text x="60" y="591" font-family="Arial,sans-serif" font-size="16" fill="#abb99c">APPLIED AI · BACKEND SYSTEMS · FULL-STACK PRODUCTS</text>
+  <text x="1140" y="591" text-anchor="end" font-family="Arial,sans-serif" font-size="14" fill="#abb99c">atharva08-dev.vercel.app</text>
+</svg>
